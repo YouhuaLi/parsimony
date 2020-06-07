@@ -1,0 +1,38 @@
+input p h m FoundPrime n !0 !1 !2 !3 
+
+// Auto-generated code for function main
+
+function BUILTIN_assign1 !0
+function BUILTIN_assign FoundPrime !0
+function BUILTIN_clear  !0
+function BUILTIN_assign n !0
+WHILE_TEST_0: function BUILTIN_assign !0 FoundPrime
+[!0] E (WHILE_STATE_0_FALSE); 1 ()
+function zero FoundPrime !0 
+function BUILTIN_assign !0 n
+function BUILTIN_assign1 !1
+function BUILTIN_add !2 !0 !1
+function BUILTIN_assign n !2
+function square n p !0 !1 !2 
+function BUILTIN_assign !0 p
+function BUILTIN_assign1 !1
+function BUILTIN_add !2 !0 !1
+function BUILTIN_assign p !2
+function BUILTIN_assign !0 n
+function BUILTIN_assign1 !1
+function BUILTIN_add !2 !0 !1
+function BUILTIN_assign m !2
+function square m m !0 !1 !2 
+WHILE_TEST_1: function BUILTIN_assign !0 FoundPrime
+function BUILTIN_assign !1 p
+function BUILTIN_assign !2 m
+function BUILTIN_greaterThan !3 !2 !1
+function BUILTIN_and !1 !0 !3
+function BUILTIN_assignNot !0 !1
+[!0] E (WHILE_STATE_1_FALSE); 1 ()
+function isPrime p h FoundPrime !0 !1 !2 
+function incr p !0 !1 !2 
+[!0] E (WHILE_TEST_1); 1 (WHILE_TEST_1)
+WHILE_STATE_1_FALSE: function decr p !0 !1 !2 
+[!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: return

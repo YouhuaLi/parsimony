@@ -64,21 +64,22 @@ int p;
 int h;
 int FoundPrime;
 
-one(FoundPrime);
+FoundPrime = 1;
 n = 0;
-
 
 while (FoundPrime) {
     zero(FoundPrime);
-    incr(n);
+    n = n + 1;
     square(n, p);
-    incr(p); /* initlize p=n^2+1*/
+    p = p + 1; /* initlize p=n^2+1*/
     m = n + 1;
     square(m, m); /* initlize m=(n+1)^2 */
     while (!FoundPrime & p < m ) {    
         isPrime(p, h, FoundPrime);
         incr(p);
-    }      
+    }
+    decr(p);
+    print p;
 }
 
 halt;
