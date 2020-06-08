@@ -1,37 +1,27 @@
-/* test if there is at least one prime number between two squre numbers*/
-func zero(x) {
-    x = 0;
-    return;
-}
-
-func one(x) {
-    x = 1;
-    return;
-}
-
-func incr(x) {
-    x = x + 1;
-    return;
-}
+/* caculate factoiral in a recursive way */
 
 func decr(x) {
     x = x - 1;
     return;
 }
 
-func factorial(x) {
-    if (x == 0 ) {
-        x = 1;
+func factorial(n, r) {
+    if (n == 0 ) {
         return;
     }
-    decr(x);
-    return x * factorial(x);
+    r = n * r;
+    decr(n);
+    factorial(n, r);
+    return;
 }
 
 int n;
+int r;
 
-n = 2;
+n = 1;
+r = 1;
 
-factorial(n);
+factorial(n, r);
+print r;
 
 halt;
