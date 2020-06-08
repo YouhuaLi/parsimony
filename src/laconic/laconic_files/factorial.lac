@@ -18,7 +18,7 @@ func factorial(n, r) {
 int n;
 int r;
 
-n = 1;
+n = 100;
 r = 1;
 
 factorial(n, r);
