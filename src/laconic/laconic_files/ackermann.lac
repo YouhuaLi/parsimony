@@ -33,34 +33,34 @@ func stack_pop(l, t, n, size, element) {
   return;
 }
 
-func ackermann(m, n, l, t, i, index, size, element, original_m, original_n) {
+/* ackermann funciton in non-recursive way. result will be stored in variable n */
+/* ref to: https://stackoverflow.com/questions/10742322/how-to-rewrite-ackermann-function-in-non-recursive-style */
+func ackermann(m, n, l, t, index, size, element, original_m, original_n) {
     original_m = m;
     original_n = n;
     stack_add(l, m);
     size = #l;
     while (size > 0){
       stack_pop(l, t, index, size, element);
-      print l;
-      print element;
       decr(size);
       m = element;
       if( original_m==0 ){
-          n = n + m + 1;
+          incr(n);
+          n = n + m;
       }
       if( original_m >0 & original_n==0 ){
           incr(n);
           decr(m);
           stack_add(l, m);
-          size = size + 1;
+          incr(size);
       }
       if(original_m > 0 & original_n >0){
-          print original_m;
           decr(m);
           stack_add(l, m);
           size = size + 1;
           m = m + 1;
           stack_add(l, m);
-          size = size + 1;
+          incr(size);
           decr(n);
       }
       original_m = m;
@@ -74,21 +74,26 @@ list l;
 list t;
 int index;
 int size;
-int i;
 int element;
 int m;
 int n;
 int original_m;
 int original_n;
 
-m = 10;
-n = 2;
+m = 5;
+n = 5;
 n = n + 1;
 
 l = [];
 t = [];
 
-ackermann(m, n, l, t, i, index, size, element, original_m, original_n);
+ackermann(m, n, l, t, index, size, element, original_m, original_n);
+
+/* n has the result, so n=A(m,n). assign n to m and compute ack(m,n) again */
+m = n;
+ackermann(m, n, l, t, index, size, element, original_m, original_n);
+
+/* now n should have value of A(A(m,n),A(m,n)) */
 print n;
 
 halt;

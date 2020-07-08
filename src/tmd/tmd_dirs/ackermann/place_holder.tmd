@@ -1,0 +1,7 @@
+input x y z !0 
+
+// Auto-generated code for function place_holder
+
+function BUILTIN_assign !0 x
+function BUILTIN_assign x !0
+return
