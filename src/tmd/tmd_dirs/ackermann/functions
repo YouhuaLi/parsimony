@@ -2,10 +2,11 @@ main
 BUILTIN_assign
 BUILTIN_clear
 BUILTIN_add1
-incr
 BUILTIN_appendE
-BUILTIN_greaterThan
+incr
 BUILTIN_getBackToStart2
+BUILTIN_add
+BUILTIN_assign1
 decr
 BUILTIN_getBackToStart
 stack_add
@@ -13,8 +14,7 @@ BUILTIN_incr
 BUILTIN_addTo
 BUILTIN_findFin
 BUILTIN_emptylist
-BUILTIN_add
-BUILTIN_assign1
+BUILTIN_greaterThan
 BUILTIN_getBackToStart3
 BUILTIN_listindex
 BUILTIN_walkTogether
@@ -23,7 +23,6 @@ BUILTIN_greaterOrEqual
 BUILTIN_listappend
 BUILTIN_negate
 BUILTIN_assign5
-BUILTIN_and
 BUILTIN_greaterThanUnsigned
 BUILTIN_equal
 ackermann

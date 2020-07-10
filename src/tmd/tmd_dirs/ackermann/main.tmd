@@ -1,4 +1,4 @@
-input index original_n original_m m l element t n size !0 !1 !2 !3 
+input index m l element t n size !0 !1 !2 
 
 // Auto-generated code for function main
 
@@ -11,8 +11,8 @@ function BUILTIN_emptylist !0
 function BUILTIN_assign l !0
 function BUILTIN_emptylist !0
 function BUILTIN_assign t !0
-function ackermann m n l t index size element original_m original_n !0 !1 !2 !3 
+function ackermann m n l t index size element !0 !1 !2 
 function BUILTIN_assign !0 n
 function BUILTIN_assign m !0
-function ackermann m n l t index size element original_m original_n !0 !1 !2 !3 
+function ackermann m n l t index size element !0 !1 !2 
 return
