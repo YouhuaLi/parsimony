@@ -2,12 +2,10 @@ main
 BUILTIN_assign
 BUILTIN_clear
 BUILTIN_add1
+incr
 BUILTIN_appendE
-BUILTIN_add
-BUILTIN_assign1
 BUILTIN_greaterThan
 BUILTIN_getBackToStart2
-incr
 decr
 BUILTIN_getBackToStart
 stack_add
@@ -15,6 +13,8 @@ BUILTIN_incr
 BUILTIN_addTo
 BUILTIN_findFin
 BUILTIN_emptylist
+BUILTIN_add
+BUILTIN_assign1
 BUILTIN_getBackToStart3
 BUILTIN_listindex
 BUILTIN_walkTogether

@@ -57,8 +57,8 @@ func ackermann(m, n, l, t, index, size, element, original_m, original_n) {
       if(original_m > 0 & original_n >0){
           decr(m);
           stack_add(l, m);
-          size = size + 1;
-          m = m + 1;
+          incr(size);
+          incr(m);
           stack_add(l, m);
           incr(size);
           decr(n);
@@ -82,7 +82,7 @@ int original_n;
 
 m = 5;
 n = 5;
-n = n + 1;
+incr(n);
 
 l = [];
 t = [];
@@ -92,7 +92,6 @@ ackermann(m, n, l, t, index, size, element, original_m, original_n);
 /* n has the result, so n=A(m,n). assign n to m and compute ack(m,n) again */
 m = n;
 ackermann(m, n, l, t, index, size, element, original_m, original_n);
-
 /* now n should have value of A(A(m,n),A(m,n)) */
 print n;
 
