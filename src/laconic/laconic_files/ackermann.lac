@@ -36,6 +36,7 @@ func stack_pop(l, t, n, size, element) {
 /* ackermann funciton in non-recursive way. result will be stored in variable n */
 /* ref to: https://stackoverflow.com/questions/10742322/how-to-rewrite-ackermann-function-in-non-recursive-style */
 func ackermann(m, n, l, t, index, size, element) {
+    incr(n);
     stack_add(l, m);
     size = #l;
     while (size > 0){
@@ -77,7 +78,6 @@ int n;
 
 m = 5;
 n = 5;
-incr(n);
 
 l = [];
 t = [];
