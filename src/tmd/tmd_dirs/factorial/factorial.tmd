@@ -1,0 +1,16 @@
+input n r !0 !1 !2 
+
+// Auto-generated code for function factorial
+
+function BUILTIN_assign !0 n
+function BUILTIN_clear  !1
+function BUILTIN_equal !2 !0 !1
+[!2] E (IF_STATE_0_FALSE); 1 ()
+return
+IF_STATE_0_FALSE: function BUILTIN_assign !0 n
+function BUILTIN_assign !1 r
+function BUILTIN_multiply !2 !0 !1
+function BUILTIN_assign r !2
+function decr n !0 !1 !2 
+function factorial n r !0 !1 !2
+return

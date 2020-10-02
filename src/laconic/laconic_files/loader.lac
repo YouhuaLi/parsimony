@@ -1,0 +1,70 @@
+/* https://codegolf.stackexchange.com/questions/176966/golf-a-number-bigger-than-loaders-number */
+
+func incr(x){
+  x = x + 1;
+  return;
+}
+
+
+func decr(x){
+  x = x - 1;
+  return;
+}
+
+/* add an element i into stack s */
+func stack_add(s, i) {
+     s = s^i;
+     return;
+}
+
+/* pop element from stask s */
+/* element is the element poped*/
+func stack_pop(l, t, n, size, element) {
+  n = 0;
+  t = [];
+  size = #l;
+  decr(size);
+  while ( n < size ) {
+      element = l@n;
+      t = t^element;
+      incr(n);
+  }
+  element = l@n;
+  l = t;
+  return;
+}
+
+func P(y, x, i, r){
+  i = 0;
+  r = ~y;
+  decr(r);
+  r = y - r;
+  while( i < x )
+  {
+    r = r * 2;
+    incr(i);
+  }
+  return;
+}
+
+/* test if x is odd number, return y = 1 when it is, else return 0*/
+func is_odd(x, y){
+  
+}
+func Z(x, r){
+  
+}
+
+int x;
+int y;
+int r;
+int i;
+
+x = 2;
+y = 2;
+
+P(y, x, i, r);
+print r;
+
+
+halt;

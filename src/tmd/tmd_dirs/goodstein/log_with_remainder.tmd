@@ -1,0 +1,27 @@
+input value base log remainder q !0 !1 !2 !3 
+
+// Auto-generated code for function log_with_remainder
+
+function BUILTIN_clear  !0
+function BUILTIN_assign log !0
+function BUILTIN_clear  !0
+function BUILTIN_assign remainder !0
+function BUILTIN_assign !0 base
+function BUILTIN_assign q !0
+WHILE_TEST_0: function BUILTIN_assign !0 q
+function BUILTIN_assign !1 value
+function BUILTIN_greaterOrEqual !2 !1 !0
+[!2] E (WHILE_STATE_0_FALSE); 1 ()
+function BUILTIN_assign !0 base
+function BUILTIN_assign !1 q
+function BUILTIN_multiply !2 !0 !1
+function BUILTIN_assign q !2
+function incr log !0 !1 !2 
+[!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: function BUILTIN_assign !0 value
+function BUILTIN_assign !1 q
+function BUILTIN_assign !2 base
+function BUILTIN_divide !3 !1 !2
+function BUILTIN_subtract !1 !0 !3
+function BUILTIN_assign remainder !1
+return

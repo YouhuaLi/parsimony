@@ -1,0 +1,5 @@
+input w s !0 !1 !2 
+
+// Auto-generated code for function stack_test
+
+function stack_add w s !0 !1 !2 

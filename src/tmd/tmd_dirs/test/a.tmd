@@ -1,0 +1,36 @@
+input m n r l_m l_n l_temp i size !0 !1 !2 
+
+// Auto-generated code for function a
+
+WHILE_TEST_0: function BUILTIN_assign !0 m
+function BUILTIN_clear  !1
+function BUILTIN_greaterThan !2 !0 !1
+[!2] E (WHILE_STATE_0_FALSE); 1 ()
+function BUILTIN_assign !0 n
+function BUILTIN_clear  !1
+function BUILTIN_equal !2 !0 !1
+[!2] E (IF_ELSE_STATE_0_FALSE); 1 ()
+function BUILTIN_assign1 !0
+function BUILTIN_assign n !0
+[!0] E (IF_ELSE_STATE_0_TRUE); 1 (IF_ELSE_STATE_0_TRUE)
+IF_ELSE_STATE_0_FALSE: function BUILTIN_assign !0 n
+function BUILTIN_assign1 !1
+function BUILTIN_subtract !2 !0 !1
+function BUILTIN_assign n !2
+function stack_add l_m m !0 !1 !2 
+function stack_add l_n n !0 !1 !2 
+function a m n r l_m l_n l_temp i size !0 !1 !2
+function stack_pop l_m l_temp i size m !0 !1 !2 
+function stack_pop l_n l_temp i size n !0 !1 !2 
+function BUILTIN_assign !0 r
+function BUILTIN_assign n !0
+IF_ELSE_STATE_0_TRUE: function BUILTIN_assign !0 m
+function BUILTIN_assign1 !1
+function BUILTIN_subtract !2 !0 !1
+function BUILTIN_assign m !2
+[!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: function BUILTIN_assign !0 n
+function BUILTIN_assign1 !1
+function BUILTIN_add !2 !0 !1
+function BUILTIN_assign r !2
+return

@@ -1,0 +1,16 @@
+input size i m l_temp r n l_n l_m !0 !1 !2 
+
+// Auto-generated code for function main
+
+function BUILTIN_emptylist !0
+function BUILTIN_assign l_m !0
+function BUILTIN_emptylist !0
+function BUILTIN_assign l_n !0
+function BUILTIN_emptylist !0
+function BUILTIN_assign l_temp !0
+function BUILTIN_assign1 !0
+function BUILTIN_assign m !0
+function BUILTIN_assign1 !0
+function BUILTIN_assign n !0
+function a m n r l_m l_n l_temp i size !0 !1 !2 
+return

@@ -1,0 +1,20 @@
+input x y p !0 !1 !2 
+
+// Auto-generated code for function x_power_y
+
+function BUILTIN_assign1 !0
+function BUILTIN_assign p !0
+WHILE_TEST_0: function BUILTIN_assign !0 y
+function BUILTIN_clear  !1
+function BUILTIN_greaterThan !2 !0 !1
+[!2] E (WHILE_STATE_0_FALSE); 1 ()
+function BUILTIN_assign !0 p
+function BUILTIN_assign !1 x
+function BUILTIN_multiply !2 !0 !1
+function BUILTIN_assign p !2
+function BUILTIN_assign !0 y
+function BUILTIN_assign1 !1
+function BUILTIN_subtract !2 !0 !1
+function BUILTIN_assign y !2
+[!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: return

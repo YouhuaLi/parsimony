@@ -1,0 +1,68 @@
+input m n l t index size element original_m original_n !0 !1 !2 !3 
+
+// Auto-generated code for function ackermann
+
+function BUILTIN_assign !0 m
+function BUILTIN_assign original_m !0
+function BUILTIN_assign !0 n
+function BUILTIN_assign original_n !0
+function stack_add l m !0 !1 !2 
+function BUILTIN_assign !0 l
+function BUILTIN_len !1 !0
+function BUILTIN_assign size !1
+WHILE_TEST_0: function BUILTIN_assign !0 size
+function BUILTIN_clear  !1
+function BUILTIN_greaterThan !2 !0 !1
+[!2] E (WHILE_STATE_0_FALSE); 1 ()
+function stack_pop l t index size element !0 !1 !2 
+function decr size !0 !1 !2 
+function BUILTIN_assign !0 element
+function BUILTIN_assign m !0
+function BUILTIN_assign !0 original_m
+function BUILTIN_clear  !1
+function BUILTIN_equal !2 !0 !1
+[!2] E (IF_STATE_0_FALSE); 1 ()
+function incr n !0 !1 !2 
+function BUILTIN_assign !0 n
+function BUILTIN_assign !1 m
+function BUILTIN_add !2 !0 !1
+function BUILTIN_assign n !2
+IF_STATE_0_FALSE: function BUILTIN_assign !0 original_m
+function BUILTIN_clear  !1
+function BUILTIN_greaterThan !2 !0 !1
+function BUILTIN_assign !0 original_n
+function BUILTIN_clear  !1
+function BUILTIN_equal !3 !0 !1
+function BUILTIN_and !0 !2 !3
+[!0] E (IF_STATE_1_FALSE); 1 ()
+function incr n !0 !1 !2 
+function decr m !0 !1 !2 
+function stack_add l m !0 !1 !2 
+function incr size !0 !1 !2 
+IF_STATE_1_FALSE: function BUILTIN_assign !0 original_m
+function BUILTIN_clear  !1
+function BUILTIN_greaterThan !2 !0 !1
+function BUILTIN_assign !0 original_n
+function BUILTIN_clear  !1
+function BUILTIN_greaterThan !3 !0 !1
+function BUILTIN_and !0 !2 !3
+[!0] E (IF_STATE_2_FALSE); 1 ()
+function decr m !0 !1 !2 
+function stack_add l m !0 !1 !2 
+function BUILTIN_assign !0 size
+function BUILTIN_assign1 !1
+function BUILTIN_add !2 !0 !1
+function BUILTIN_assign size !2
+function BUILTIN_assign !0 m
+function BUILTIN_assign1 !1
+function BUILTIN_add !2 !0 !1
+function BUILTIN_assign m !2
+function stack_add l m !0 !1 !2 
+function incr size !0 !1 !2 
+function decr n !0 !1 !2 
+IF_STATE_2_FALSE: function BUILTIN_assign !0 m
+function BUILTIN_assign original_m !0
+function BUILTIN_assign !0 n
+function BUILTIN_assign original_n !0
+[!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: return

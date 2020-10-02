@@ -5,6 +5,9 @@ func decr(x) {
     return;
 }
 
+func factorial_temp(n,r) {
+	return;
+}
 func factorial(n, r) {
     if (n == 0 ) {
         return;
@@ -18,7 +21,7 @@ func factorial(n, r) {
 int n;
 int r;
 
-n = 100;
+n = 4;
 r = 1;
 
 factorial(n, r);

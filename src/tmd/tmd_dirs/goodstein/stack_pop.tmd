@@ -1,0 +1,33 @@
+input l t n size element !0 !1 !2 
+
+// Auto-generated code for function stack_pop
+
+function BUILTIN_clear  !0
+function BUILTIN_assign n !0
+function BUILTIN_emptylist !0
+function BUILTIN_assign t !0
+function BUILTIN_assign !0 l
+function BUILTIN_len !1 !0
+function BUILTIN_assign size !1
+function decr size !0 !1 !2 
+WHILE_TEST_0: function BUILTIN_assign !0 n
+function BUILTIN_assign !1 size
+function BUILTIN_greaterThan !2 !1 !0
+[!2] E (WHILE_STATE_0_FALSE); 1 ()
+function BUILTIN_assign !0 l
+function BUILTIN_assign !1 n
+function BUILTIN_listindex !2 !0 !1
+function BUILTIN_assign element !2
+function BUILTIN_assign !0 t
+function BUILTIN_assign !1 element
+function BUILTIN_listappend !2 !0 !1
+function BUILTIN_assign t !2
+function incr n !0 !1 !2 
+[!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: function BUILTIN_assign !0 l
+function BUILTIN_assign !1 n
+function BUILTIN_listindex !2 !0 !1
+function BUILTIN_assign element !2
+function BUILTIN_assign !0 t
+function BUILTIN_assign l !0
+return

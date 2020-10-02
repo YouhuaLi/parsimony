@@ -1,0 +1,143 @@
+func decr(x) {
+    x = x - 1;
+    return;
+}
+
+func incr(x) {
+    x = x + 1;
+    return;
+}
+
+/* add an element i into stack s */
+func stack_add(s, i) {
+     s = s^i;
+     return;
+}
+
+/* pop element from stask l */
+/* element is the element poped*/
+func stack_pop(l, t, n, size, element) {
+  n = 0;
+  t = [];
+  size = #l;
+  decr(size);
+  while ( n < size ) {
+      element = l@n;
+      t = t^element;
+      incr(n);
+  }
+  element = l@n;
+  l = t;
+  return;
+}
+
+
+func log_with_remainder(value, base, log, remainder, q) {
+    log = 0;
+    remainder = 0;
+    q = base;
+
+    while (q <= value) {
+        q = base * q;
+        incr(log);
+    }
+    remainder = value - q / base;
+    return;
+}
+
+func x_power_y(x, y, p) {
+    p = 1;
+    while (y > 0) {
+        p = p * x;
+        y = y - 1;
+    }
+    return;
+}
+
+func stein_none_rescursive(n,d,s,wstack,flag_log_phase,r,last_s,temp_var,temp_list) {
+    s = 0;
+    flag_log_phase = 1;
+    r = n;
+    last_s = 0;
+    stack_add(wstack, r);
+    stack_add(wstack, s);
+    temp_var = #wstack;
+    
+    while (temp_var > 0) {
+      print wstack;
+      stack_pop(wstack, temp_list, n, temp_var, s);
+      stack_pop(wstack, temp_list, n, temp_var, r);
+      ifelse (flag_log_phase == 1) {
+            n = r;
+            while (n > 0) {
+              log_with_remainder(n, d, temp_var, r, last_s);
+              print temp_var;
+              print r;
+              stack_add(wstack, r);
+              r=0;
+              stack_add(wstack, r);
+              n=temp_var;
+            }
+            flag_log_phase = 0;
+            last_s = 0;
+      } 
+      {
+        ifelse (s == 0) {
+                s = last_s; 
+                ifelse (r < d){
+                    incr(d);
+                    x_power_y(d, s, temp_var);
+                    decr(d);
+                    s = temp_var;
+                    s = s + r;
+                    stack_add(wstack, r);
+                    stack_add(wstack, s);
+                    last_s = 0;
+                }
+                {  
+                    incr(d);
+                    x_power_y(d, s, temp_var);
+                    decr(d);
+                    s = temp_var;
+                    stack_add(wstack, r);
+                    stack_add(wstack, s);
+                    stack_add(wstack, r);
+                    temp_var = 0;
+                    stack_add(wstack, temp_var);
+                    flag_log_phase = 1;
+                }
+        }
+        {
+              s = s+last_s;
+              last_s = s;
+        }
+      }
+      temp_var = #wstack;
+    }
+    s = s - 1;
+    return;
+}
+
+func stack_test(w, s) {
+  stack_add(w, s);
+}
+
+list w;
+list l;
+int n;
+int base;
+int s;
+int flag_log_phase;
+int r;
+int last_s;
+int temp_var;
+
+n = 10;
+base = 2;
+s = 1;
+w = [];
+l = [];
+stein_none_rescursive(n,base,s,w,flag_log_phase,r,last_s, temp_var, l);
+print s;
+halt;
+

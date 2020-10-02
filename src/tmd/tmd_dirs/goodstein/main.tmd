@@ -1,0 +1,16 @@
+input last_s flag_log_phase l n s base w temp_var r !0 !1 !2 !3 
+
+// Auto-generated code for function main
+
+function BUILTIN_assign10 !0
+function BUILTIN_assign n !0
+function BUILTIN_assign2 !0
+function BUILTIN_assign base !0
+function BUILTIN_assign1 !0
+function BUILTIN_assign s !0
+function BUILTIN_emptylist !0
+function BUILTIN_assign w !0
+function BUILTIN_emptylist !0
+function BUILTIN_assign l !0
+function stein_none_rescursive n base s w flag_log_phase r last_s temp_var l !0 !1 !2 !3 
+return

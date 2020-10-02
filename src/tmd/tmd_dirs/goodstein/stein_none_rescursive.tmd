@@ -1,0 +1,99 @@
+input n d s wstack flag_log_phase r last_s temp_var temp_list !0 !1 !2 !3 
+
+// Auto-generated code for function stein_none_rescursive
+
+function BUILTIN_clear  !0
+function BUILTIN_assign s !0
+function BUILTIN_assign1 !0
+function BUILTIN_assign flag_log_phase !0
+function BUILTIN_assign !0 n
+function BUILTIN_assign r !0
+function BUILTIN_clear  !0
+function BUILTIN_assign last_s !0
+function stack_add wstack r !0 !1 !2 
+function stack_add wstack s !0 !1 !2 
+function BUILTIN_assign !0 wstack
+function BUILTIN_len !1 !0
+function BUILTIN_assign temp_var !1
+WHILE_TEST_0: function BUILTIN_assign !0 temp_var
+function BUILTIN_clear  !1
+function BUILTIN_greaterThan !2 !0 !1
+[!2] E (WHILE_STATE_0_FALSE); 1 ()
+function stack_pop wstack temp_list n temp_var s !0 !1 !2 
+function stack_pop wstack temp_list n temp_var r !0 !1 !2 
+function BUILTIN_assign !0 flag_log_phase
+function BUILTIN_assign1 !1
+function BUILTIN_equal !2 !0 !1
+[!2] E (IF_ELSE_STATE_0_FALSE); 1 ()
+function BUILTIN_assign !0 r
+function BUILTIN_assign n !0
+WHILE_TEST_1: function BUILTIN_assign !0 n
+function BUILTIN_clear  !1
+function BUILTIN_greaterThan !2 !0 !1
+[!2] E (WHILE_STATE_1_FALSE); 1 ()
+function log_with_remainder n d temp_var r last_s !0 !1 !2 !3 
+function stack_add wstack r !0 !1 !2 
+function BUILTIN_clear  !0
+function BUILTIN_assign r !0
+function stack_add wstack r !0 !1 !2 
+function BUILTIN_assign !0 temp_var
+function BUILTIN_assign n !0
+[!0] E (WHILE_TEST_1); 1 (WHILE_TEST_1)
+WHILE_STATE_1_FALSE: function BUILTIN_clear  !0
+function BUILTIN_assign flag_log_phase !0
+function BUILTIN_clear  !0
+function BUILTIN_assign last_s !0
+[!0] E (IF_ELSE_STATE_0_TRUE); 1 (IF_ELSE_STATE_0_TRUE)
+IF_ELSE_STATE_0_FALSE: function BUILTIN_assign !0 s
+function BUILTIN_clear  !1
+function BUILTIN_equal !2 !0 !1
+[!2] E (IF_ELSE_STATE_1_FALSE); 1 ()
+function BUILTIN_assign !0 last_s
+function BUILTIN_assign s !0
+function BUILTIN_assign !0 r
+function BUILTIN_assign !1 d
+function BUILTIN_greaterThan !2 !1 !0
+[!2] E (IF_ELSE_STATE_2_FALSE); 1 ()
+function incr d !0 !1 !2 
+function x_power_y d s temp_var !0 !1 !2 
+function decr d !0 !1 !2 
+function BUILTIN_assign !0 temp_var
+function BUILTIN_assign s !0
+function BUILTIN_assign !0 s
+function BUILTIN_assign !1 r
+function BUILTIN_add !2 !0 !1
+function BUILTIN_assign s !2
+function stack_add wstack r !0 !1 !2 
+function stack_add wstack s !0 !1 !2 
+function BUILTIN_clear  !0
+function BUILTIN_assign last_s !0
+[!0] E (IF_ELSE_STATE_2_TRUE); 1 (IF_ELSE_STATE_2_TRUE)
+IF_ELSE_STATE_2_FALSE: function incr d !0 !1 !2 
+function x_power_y d s temp_var !0 !1 !2 
+function decr d !0 !1 !2 
+function BUILTIN_assign !0 temp_var
+function BUILTIN_assign s !0
+function stack_add wstack r !0 !1 !2 
+function stack_add wstack s !0 !1 !2 
+function stack_add wstack r !0 !1 !2 
+function BUILTIN_clear  !0
+function BUILTIN_assign temp_var !0
+function stack_add wstack temp_var !0 !1 !2 
+function BUILTIN_assign1 !0
+function BUILTIN_assign flag_log_phase !0
+IF_ELSE_STATE_2_TRUE: [!0] E (IF_ELSE_STATE_1_TRUE); 1 (IF_ELSE_STATE_1_TRUE)
+IF_ELSE_STATE_1_FALSE: function BUILTIN_assign !0 s
+function BUILTIN_assign !1 last_s
+function BUILTIN_add !2 !0 !1
+function BUILTIN_assign s !2
+function BUILTIN_assign !0 s
+function BUILTIN_assign last_s !0
+IF_ELSE_STATE_1_TRUE: IF_ELSE_STATE_0_TRUE: function BUILTIN_assign !0 wstack
+function BUILTIN_len !1 !0
+function BUILTIN_assign temp_var !1
+[!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: function BUILTIN_assign !0 s
+function BUILTIN_assign1 !1
+function BUILTIN_subtract !2 !0 !1
+function BUILTIN_assign s !2
+return

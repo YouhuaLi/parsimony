@@ -98,9 +98,13 @@ class CodeWriter(LaconicListener):
 
     def enterFuncproccall(self, ctx):
         funcProcName = ctx.funcproccallbody().VAR(0).getText()
+        pront("function name is:" + funcProcName)
         
         try:
             assert funcProcName in self.funcProcDictionary
+            pront("The following functions are recognized: " + \
+                 str(self.funcAuxCountDictionary.keys()))
+
         except:
             pront("Error: unrecognized function name " + funcProcName)
             pront("The following functions are recognized: " + \

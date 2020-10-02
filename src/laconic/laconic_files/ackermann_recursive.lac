@@ -1,0 +1,79 @@
+func a_temp(m, n, r, orginal_m, original_n) {
+  return;
+}
+
+func incr(x){
+  x = x + 1;
+  return;
+}
+
+
+func decr(x){
+  x = x - 1;
+  return;
+}
+
+/* add an element i into stack s */
+func stack_add(s, i) {
+     s = s^i;
+     return;
+}
+
+/* pop element from stask s */
+/* element is the element poped*/
+func stack_pop(l, t, n, size, element) {
+  n = 0;
+  t = [];
+  size = #l;
+  decr(size);
+  while ( n < size ) {
+      element = l@n;
+      t = t^element;
+      incr(n);
+  }
+  element = l@n;
+  l = t;
+  return;
+}
+
+
+func a(m, n, r, l_m, l_n, l_temp, i, size){
+  while(m > 0){
+    ifelse(n == 0){
+      n = 1;
+    }
+    {
+      n = n - 1;
+      stack_add(l_m, m);
+      stack_add(l_n, n);
+      a(m, n, r, l_m, l_n, l_temp, i, size);
+      stack_pop(l_m, l_temp, i, size, m);
+      stack_pop(l_n, l_temp, i, size, n);
+      n = r;
+    }
+    m = m - 1;
+  } 
+  r = n + 1;
+  return;
+}
+
+int m;
+int n;
+int r;
+list l_m;
+list l_n;
+list l_temp;
+int i;
+int size;
+
+l_m = [];
+l_n = [];
+l_temp = [];
+
+m = 1;
+n = 1;
+a(m, n, r, l_m, l_n, l_temp, i, size);
+print r;
+
+
+halt;
