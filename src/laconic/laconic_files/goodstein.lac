@@ -10,12 +10,10 @@ func incr(x) {
 
 func pair(in1, in2, out) {
     out = (in1 + in2) * (in1 + in2 + 1) / 2 + in2;
-    out = out + 1;
   return;
 }
 
 func unpair(out1, out2, in, t0, t1) {
-    in = in - 1;
     t0 = 0;
     t1 = 0; /* invariant: t1 = t0 * (t0 + 1) / 2 */
     while (in >= t1) {
@@ -76,16 +74,16 @@ func stein_none_rescursive(n,d,s,wstack,flag_log_phase,r,last_s,temp_var, t0, t1
     stack_push(wstack, s);
     
     while (wstack > 0) {
+      print wstack;
       stack_pop(s, wstack, t0, t1);
       stack_pop(r, wstack, t0, t1);
+      print wstack;
       ifelse (flag_log_phase == 1) {
             n = r;
             while (n > 0) {
               log_with_remainder(n, d, temp_var, r, last_s);
-              /*
               print temp_var;
               print r;
-              */
               stack_push(wstack, r);
               r=0;
               stack_push(wstack, r);
