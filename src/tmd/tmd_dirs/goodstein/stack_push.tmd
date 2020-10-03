@@ -1,0 +1,6 @@
+input stack var !0 !1 !2 !3 
+
+// Auto-generated code for function stack_push
+
+function pair stack var stack !0 !1 !2 !3 
+return

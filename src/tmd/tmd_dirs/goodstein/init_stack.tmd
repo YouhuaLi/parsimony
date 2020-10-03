@@ -1,0 +1,7 @@
+input stack !0 
+
+// Auto-generated code for function init_stack
+
+function BUILTIN_clear  !0
+function BUILTIN_assign stack !0
+return

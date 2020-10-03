@@ -1,0 +1,23 @@
+input in1 in2 out !0 !1 !2 !3 
+
+// Auto-generated code for function pair
+
+function BUILTIN_assign !0 in1
+function BUILTIN_assign !1 in2
+function BUILTIN_add !2 !0 !1
+function BUILTIN_assign !0 in1
+function BUILTIN_assign !1 in2
+function BUILTIN_add !3 !0 !1
+function BUILTIN_assign1 !0
+function BUILTIN_add !1 !3 !0
+function BUILTIN_multiply !0 !2 !1
+function BUILTIN_assign2 !1
+function BUILTIN_divide !2 !0 !1
+function BUILTIN_assign !0 in2
+function BUILTIN_add !1 !2 !0
+function BUILTIN_assign out !1
+function BUILTIN_assign !0 out
+function BUILTIN_assign1 !1
+function BUILTIN_add !2 !0 !1
+function BUILTIN_assign out !2
+return
