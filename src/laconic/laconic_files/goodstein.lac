@@ -8,9 +8,9 @@ func incr(x) {
     return;
 }
 
-func pair(in1, in2, out) {
-    out = (in1 + in2) * (in1 + in2 + 1) / 2 + in2;
-  return;
+func pair(out, in1, in2) {
+    out = in2 + (in1 + in2) * (in1 + in2 + 1) / 2;
+    return;
 }
 
 func unpair(out1, out2, in, t0, t1) {
@@ -32,13 +32,15 @@ func init_stack(stack) {
   return;
 }
 
-func stack_push(stack, var) {
-   pair(stack, var, stack);
+func stack_push(stack, var, t0) {
+   t0 = var + 1;   
+   pair(stack, t0, stack);
    return;
 }
 
 func stack_pop(var, stack, t0, t1) {
-   unpair(stack, var, stack, t0, t1);
+   unpair(var, stack, stack, t0, t1);
+   var = var - 1;
    return;
 }
 
@@ -70,23 +72,19 @@ func stein_none_rescursive(n,d,s,wstack,flag_log_phase,r,last_s,temp_var, t0, t1
     flag_log_phase = 1;
     r = n;
     last_s = 0;
-    stack_push(wstack, r);
-    stack_push(wstack, s);
+    stack_push(wstack, r, t0);
+    stack_push(wstack, s, t0);
     
     while (wstack > 0) {
-      print wstack;
       stack_pop(s, wstack, t0, t1);
       stack_pop(r, wstack, t0, t1);
-      print wstack;
       ifelse (flag_log_phase == 1) {
             n = r;
             while (n > 0) {
               log_with_remainder(n, d, temp_var, r, last_s);
-              print temp_var;
-              print r;
-              stack_push(wstack, r);
+              stack_push(wstack, r, t0);
               r=0;
-              stack_push(wstack, r);
+              stack_push(wstack, r, t0);
               n=temp_var;
             }
             flag_log_phase = 0;
@@ -101,8 +99,8 @@ func stein_none_rescursive(n,d,s,wstack,flag_log_phase,r,last_s,temp_var, t0, t1
                     decr(d);
                     s = temp_var;
                     s = s + r;
-                    stack_push(wstack, r);
-                    stack_push(wstack, s);
+                    stack_push(wstack, r, t0);
+                    stack_push(wstack, s, t0);
                     last_s = 0;
                 }
                 {  
@@ -110,11 +108,11 @@ func stein_none_rescursive(n,d,s,wstack,flag_log_phase,r,last_s,temp_var, t0, t1
                     x_power_y(d, s, temp_var);
                     decr(d);
                     s = temp_var;
-                    stack_push(wstack, r);
-                    stack_push(wstack, s);
-                    stack_push(wstack, r);
+                    stack_push(wstack, r, t0);
+                    stack_push(wstack, s, t0);
+                    stack_push(wstack, r, t0);
                     temp_var = 0;
-                    stack_push(wstack, temp_var);
+                    stack_push(wstack, temp_var, t0);
                     flag_log_phase = 1;
                 }
         }
@@ -146,12 +144,22 @@ int temp_var;
 t0 = 0;
 t1 = 0;
 
-n = 5;
 base = 2;
-s = 1;
 
 init_stack(stack);
+
+n=2;
+
 stein_none_rescursive(n,base,s,stack,flag_log_phase,r,last_s, temp_var, t0, t1);
 print s;
+
+n=3;
+stein_none_rescursive(n,base,s,stack,flag_log_phase,r,last_s, temp_var, t0, t1);
+print s;
+
+n=4;
+stein_none_rescursive(n,base,s,stack,flag_log_phase,r,last_s, temp_var, t0, t1);
+print s;
+
 halt;
 
